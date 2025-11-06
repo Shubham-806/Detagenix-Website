@@ -1,13 +1,26 @@
 import React from "react";
+import { Routes, Route } from "react-router-dom";
+import Home from "./pages/Home/Home.jsx";
+import Navbar from "./layout/Navbar/Navbar.jsx";
+import Footer from "./layout/Footer/Footer.jsx";
+import BlogPage from "./pages/Blog/BlogPage.jsx";
+import BlogDetailPage from "./pages/Blog/BlogDetailPage.jsx";
+import Service from "./pages/Service/Service.jsx";
+import Projectpage from "./pages/Project/Projectpage.jsx";
 
 function App() {
   return (
-    <div className="app">
-      <main className="container">
-        <h1>Detagenix</h1>
-        <p>Welcome to the Detagenix website!</p>
-      </main>
-    </div>
+    <>
+      <Navbar />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/services" element={<Service />} />
+        <Route path="/projects" element={<Projectpage />} />
+        <Route path="/blog" element={<BlogPage />} />
+        <Route path="/blog/:slug" element={<BlogDetailPage />} />
+      </Routes>
+      <Footer />
+    </>
   );
 }
 
