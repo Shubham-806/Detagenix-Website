@@ -21,8 +21,11 @@ const ServiceModal = ({ service, onClose, openForm }) => {
           ))}
         </div>
 
-        <button className="book-btn" onClick={openForm}>
-          Book Service
+<button
+  className="book-btn"
+  onClick={() => window.open("https://www.linkedin.com/company/detagenix/", "_blank")}
+>
+          Contact Us
         </button>
       </div>
     </div>

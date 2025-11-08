@@ -1,17 +1,65 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './Techslider.css';
 
+// ✅ Import Icons
+import { FaRobot, FaCloud, FaShieldAlt, FaMobileAlt, FaGlobe, FaChartLine, FaBolt, FaLink } from "react-icons/fa";
+
+
+import { TbDeviceMobileCog } from "react-icons/tb";  // IoT icon
+
 const Techslider = () => {
+  const [isPaused, setIsPaused] = useState(false);
 
   const techData = [
-    { id: 1, icon: "🤖", name: "Artificial Intelligence", description: "AI systems that can perform tasks requiring human intelligence." },
-    { id: 2, icon: "⛓️", name: "Blockchain", description: "Decentralized ledger technology for secure transactions." },
-    { id: 3, icon: "☁️", name: "Cloud Computing", description: "On-demand IT resources over the internet." },
-    { id: 4, icon: "🔒", name: "Cybersecurity", description: "Protection of systems from digital attacks." },
-    { id: 5, icon: "📱", name: "Mobile Development", description: "Creating applications for mobile devices." },
-    { id: 6, icon: "🌐", name: "Web Development", description: "Building websites and applications." },
-    { id: 7, icon: "📊", name: "Data Science", description: "Extracting insights from data." },
-    { id: 8, icon: "⚡", name: "Internet of Things", description: "Network of connected smart devices." },
+    {
+      id: 1,
+      icon: <FaRobot />,
+      name: "Artificial Intelligence",
+      description: "AI systems that can perform tasks requiring human intelligence."
+    },
+    {
+      id: 2,
+      icon: <FaLink />,
+
+      name: "Blockchain",
+      description: "Decentralized, distributed ledger technology for secure transactions."
+    },
+    {
+      id: 3,
+      icon: <FaCloud />,
+      name: "Cloud Computing",
+      description: "On-demand delivery of IT resources over the internet."
+    },
+    {
+      id: 4,
+      icon: <FaShieldAlt />,
+      name: "Cybersecurity",
+      description: "Protection of systems from digital attacks."
+    },
+    {
+      id: 5,
+      icon: <FaMobileAlt />,
+      name: "Mobile Development",
+      description: "Creating applications for mobile devices and platforms."
+    },
+    {
+      id: 6,
+      icon: <FaGlobe />,
+      name: "Web Development",
+      description: "Building and maintaining websites and web applications."
+    },
+    {
+      id: 7,
+      icon: <FaChartLine />,
+      name: "Data Science",
+      description: "Extracting insights from structured and unstructured data."
+    },
+    {
+      id: 8,
+      icon: <TbDeviceMobileCog />,
+      name: "Internet of Things",
+      description: "Network of physical objects embedded with sensors and software."
+    }
   ];
 
   const duplicatedSlides = [...techData, ...techData];
@@ -20,8 +68,12 @@ const Techslider = () => {
     <div className="tech-slider-container">
       <h1>Our Technology Stack</h1>
 
-      <div className="slider-container marquee-mode">
-        <div className="slider-track marquee-scroll">
+      <div
+        className={`slider-container ${isPaused ? 'paused' : ''}`}
+        onMouseEnter={() => setIsPaused(true)}
+        onMouseLeave={() => setIsPaused(false)}
+      >
+        <div className="slider-track">
           {duplicatedSlides.map((tech, index) => (
             <div key={`${tech.id}-${index}`} className="slide">
               <div className="tech-icon">{tech.icon}</div>
@@ -31,7 +83,6 @@ const Techslider = () => {
           ))}
         </div>
       </div>
-
     </div>
   );
 };

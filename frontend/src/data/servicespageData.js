@@ -1,3 +1,7 @@
+import cloudimage from "../asset/services/cloud.png";
+import softwareimage from "../asset/services/software.jpeg";
+import resourceimage from "../asset/services/resource.png";
+import businessimage from "../asset/services/businesssolution.png";
 export const servicespageData = [
   {
     id: 1,
@@ -5,7 +9,7 @@ export const servicespageData = [
     subtitle: "Scalable cloud, DevOps automation & modernization",
     description:
       "We help organizations migrate to the cloud, modernize legacy systems, streamline operations, and adopt digital-first solutions. Our cloud engineers specialize in AWS, Azure, and GCP to build secure, scalable, and high-performance infrastructures.",
-    icon: "/icons/cloud.svg",
+    icon: cloudimage,
     techStack: [
       "AWS",
       "Azure",
@@ -29,7 +33,7 @@ export const servicespageData = [
     subtitle: "Tailor-made web, mobile, and enterprise applications",
     description:
       "We build secure, scalable, and lightning-fast custom applications—from enterprise dashboards to multi-platform mobile apps. Our team delivers software engineered for performance, automation, and long-term growth.",
-    icon: "/icons/software.svg",
+    icon: softwareimage,
     techStack: [
       "MERN Stack",
       "Next.js",
@@ -53,7 +57,7 @@ export const servicespageData = [
     subtitle: "Dedicated developers, engineers & IT staffing",
     description:
       "We provide skilled and certified IT professionals for on-site or remote deployment. Whether you need developers, cloud engineers, QA testers, or DevOps teams, we supply reliable talent to meet your operational goals.",
-    icon: "/icons/resource.svg",
+    icon: resourceimage,
     techStack: [
       "Full Stack Developers",
       "Cloud Engineers",
@@ -75,7 +79,7 @@ export const servicespageData = [
     subtitle: "Enterprise solutions to drive growth & efficiency",
     description:
       "We empower businesses with data-driven solutions, automation systems, workflow optimization, and enterprise-grade digital products tailored to their unique needs.",
-    icon: "/icons/business.svg",
+    icon: businessimage,
     techStack: [
       "Power BI",
       "Tableau",

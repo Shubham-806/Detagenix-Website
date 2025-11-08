@@ -6,6 +6,10 @@
   font-size: 1rem;
   transition: all 0.3s ease;
 }
+.contact-info-dark h2{
+  color: #00bfff;
+  
+}
 
 .contact-info-dark ul li i {
   color: #00bfff;

@@ -9,15 +9,20 @@
   background-color: #0f172a;
 }
 .blog-list-title {
-  font-size: 3rem;
- color: white;
-  margin: 40px 0;  
+  color: #00bfff;
+  font-weight: 600;
+  margin-bottom: 30px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  position: relative;
+  font-size: 3rem; 
 }
 
 .blog-grid {
     width: 80%;
   display:grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  place-items: center;
   gap: 20px;
 }
 

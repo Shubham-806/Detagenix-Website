@@ -15,8 +15,9 @@
 .service-card {
   display: flex;
   flex-direction: column;
+  justify-content: space-between; /* ✅ pushes button to bottom */
   align-items: center;
-  gap: 1rem;
+  gap: 0.5rem;
   padding: 30px;
   background: #fff;
   color: #000;
@@ -24,6 +25,19 @@
   box-shadow: 0 3px 10px rgba(0,0,0,0.1);
   text-align: center;
   transition: all 0.3s ease;
+  height: 100%; /* ✅ make all cards same height in grid */
+}
+
+.service-card img {
+  width: 100%;
+  height: 20rem;
+  object-fit: cover;         
+  border-radius: 12px;
+  margin-bottom: 15px;
+}
+
+.service-card-content {
+  flex-grow: 1; /* ✅ content takes remaining space, pushes button down */
 }
 
 .service-card:hover {
@@ -31,11 +45,8 @@
   box-shadow: 0 10px 22px rgba(79,195,247,0.35);
 }
 
-.service-card img {
-  width: 70%;
-  border-radius: 12px;
-  margin-bottom: 15px;
-}
+
+
 
 .learn-more {
   display: inline-block;

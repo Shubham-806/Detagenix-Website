@@ -57,11 +57,12 @@
 }
 
 /* Buttons */
+/* Buttons */
 .btn-primary,
 .btn-secondary {
   padding: 12px 35px;
   border: none;
-  border-radius: 25px;
+  border-radius: 50px !important; /* ✅ Perfect cylindrical shape */
   font-size: 1.1rem;
   font-weight: 600;
   cursor: pointer;
@@ -69,6 +70,7 @@
   margin: 0 10px;
   background: #ffffff !important;
   color: #007bff !important;
+  border: none !important;
 }
 
 .btn-primary:hover,
@@ -77,6 +79,7 @@
   transform: translateY(-2px);
   box-shadow: 0 5px 15px rgba(255, 255, 255, 0.2);
 }
+
 
 /* =========================================================
    ✅ SERVICE SECTION
