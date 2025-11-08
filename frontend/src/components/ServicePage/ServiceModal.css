@@ -8,13 +8,14 @@
   align-items: center;
   z-index: 2000;
   animation: fadeIn 0.2s ease-in-out;
+  padding: 15px; /* ✅ prevents modal cutoff on very small screens */
 }
 
 /* Modal Box */
 .modal-content {
-  background: #ffffff !important;   /* ✅ FORCE WHITE SOLID BACKGROUND */
-  backdrop-filter: none !important; /* ✅ REMOVE ANY BLUR */
-  opacity: 1 !important;            /* ✅ REMOVE TRANSPARENCY */
+  background: #ffffff !important;   
+  backdrop-filter: none !important;
+  opacity: 1 !important;
 
   width: 90%;
   max-width: 600px;
@@ -25,6 +26,7 @@
   animation: popIn 0.25s ease-in-out;
   z-index: 9999;
 }
+
 /* Close Button */
 .close-btn {
   position: absolute;
@@ -113,10 +115,72 @@
 }
 
 @keyframes fadeIn {
-  from {
-    opacity: 0;
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+/* ✅ RESPONSIVE FIXES */
+@media (max-width: 768px) {
+  .modal-content {
+    width: 95%;
+    padding: 22px;
+    border-radius: 14px;
   }
-  to {
-    opacity: 1;
+
+  .modal-content h2 {
+    font-size: 22px;
+  }
+
+  .modal-icon {
+    width: 55px;
+    height: 55px;
+  }
+
+  .modal-desc {
+    font-size: 15px;
+  }
+
+  .book-btn {
+    padding: 12px;
+    font-size: 15px;
+  }
+}
+
+/* ✅ VERY SMALL PHONES (≤ 480px) */
+@media (max-width: 480px) {
+  .modal-content {
+    width: 100%;
+    padding: 18px;
+    border-radius: 12px;
+  }
+
+  .close-btn {
+    top: 10px;
+    right: 12px;
+    font-size: 20px;
+  }
+
+  .modal-icon {
+    width: 50px;
+    height: 50px;
+  }
+
+  .modal-content h2 {
+    font-size: 20px;
+  }
+
+  .modal-desc {
+    font-size: 14px;
+    line-height: 1.5;
+  }
+
+  .tech-item {
+    font-size: 13px;
+    padding: 5px 10px;
+  }
+
+  .book-btn {
+    padding: 12px;
+    font-size: 15px;
   }
 }

@@ -1,13 +1,17 @@
-/* HeroSection.css */
+/* =========================================================
+   ✅ HERO SECTION (Fully Responsive)
+   ========================================================= */
 .hero-video-section {
   position: relative;
   height: 90vh;
+  min-height: 450px;
   overflow: hidden;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
+/* Background Video */
 .hero-background-video {
   position: absolute;
   top: 50%;
@@ -16,20 +20,20 @@
   min-height: 100%;
   width: auto;
   height: auto;
-  transform: translateX(-50%) translateY(-50%);
+  object-fit: cover;
+  transform: translate(-50%, -50%);
   z-index: -1;
 }
 
+/* Dark Layer */
 .video-overlay {
   position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.5); /* Dark overlay */
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
   z-index: 0;
 }
 
+/* Hero Content */
 .hero-content {
   position: relative;
   z-index: 1;
@@ -43,6 +47,7 @@
   font-size: 3.5rem;
   margin-bottom: 1rem;
   font-weight: 700;
+  line-height: 1.2;
 }
 
 .hero-content p {
@@ -50,7 +55,10 @@
   margin-bottom: 2rem;
   opacity: 0.9;
 }
-.btn-primary, .btn-secondary {
+
+/* Buttons */
+.btn-primary,
+.btn-secondary {
   padding: 12px 35px;
   border: none;
   border-radius: 25px;
@@ -59,46 +67,31 @@
   cursor: pointer;
   transition: all 0.3s ease;
   margin: 0 10px;
-}
-
-.btn-primary {
   background: #ffffff !important;
-  color: #007bff;
-}
-
-.btn-secondary {
-  background: #ffffff!important;
   color: #007bff !important;
-  border: none !important;
-  
 }
 
-.btn-primary:hover {
+.btn-primary:hover,
+.btn-secondary:hover {
   background: #f8f9fa;
   transform: translateY(-2px);
-  box-shadow: 0 5px 15px rgba(255, 255, 255, 0.3);
+  box-shadow: 0 5px 15px rgba(255, 255, 255, 0.2);
 }
 
-.btn-secondary:hover {
-  background: #ffffff;
-  color: #007bff !important;
-  transform: translateY(-2px);
-}
+/* =========================================================
+   ✅ SERVICE SECTION
+   ========================================================= */
 
-
-/* End of HeroSection.css */
-/* service section.css */ 
-
-.services-section h1{
+.services-section h1 {
   color: #ffffff;
   font-size: 2.5rem;
   text-align: center;
-  padding:1.5rem 0 3rem 0;
-
+  padding: 1.5rem 0 3rem 0;
 }
 
-
-/* Stats Bar Section */
+/* =========================================================
+   ✅ STATS SECTION (Very Responsive)
+   ========================================================= */
 .stats-bar {
   padding: 3rem 2rem;
   background: #1e293b;
@@ -107,20 +100,20 @@
 
 .stats-container {
   max-width: 1200px;
-  margin: 0 auto;
+  margin: auto;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
   gap: 2rem;
   text-align: center;
 }
 
 .stat-item {
-  padding: 2.5rem;
+  padding: 2rem;
   background: rgba(255, 255, 255, 0.1);
   border-radius: 10px;
   backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  transition: transform 0.3s ease, background 0.3s ease;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  transition: all 0.3s ease;
 }
 
 .stat-item:hover {
@@ -145,26 +138,101 @@
   font-weight: 500;
 }
 
-/* Mobile Responsive */
+/* =========================================================
+   ✅ RESPONSIVENESS (TABLET)
+   ========================================================= */
+@media (max-width: 992px) {
+  .hero-content h1 {
+    font-size: 3rem;
+  }
+  .hero-content p {
+    font-size: 1.1rem;
+  }
+}
+
+/* =========================================================
+   ✅ RESPONSIVENESS (MOBILE)
+   ========================================================= */
 @media (max-width: 768px) {
+
+  /* Hero Section */
+  .hero-video-section {
+    height: 100vh !important;
+  }
+
+  .hero-content h1 {
+    font-size: 3rem !important;
+  }
+
+  .hero-content p {
+    font-size: 1rem;
+  }
+
+  .btn-primary,
+  .btn-secondary {
+    padding: 10px 0px !important;
+    font-size: 1rem;
+    margin: 2px;
+  }
+  .hero-buttons {
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+  align-items: center;
+}
+
+  /* Stats Section */
   .stats-bar {
     padding: 2rem 1rem;
   }
-  
+
   .stats-container {
     grid-template-columns: repeat(2, 1fr);
     gap: 1rem;
   }
-  
+
   .stat-item {
-    padding: 1rem;
+    padding: 1.3rem;
   }
-  
+
   .stat-icon {
     font-size: 2rem;
   }
-  
+
   .stat-number {
-    font-size: 1.5rem;
+    font-size: 1.8rem;
+  }
+}
+
+/* =========================================================
+   ✅ VERY SMALL DEVICES (Phones < 480px)
+   ========================================================= */
+@media (max-width: 480px) {
+  
+  .hero-video-section {
+    height: 65vh;
+  }
+
+  .hero-content h1 {
+    font-size: 2rem;
+  }
+
+  .hero-content p {
+    font-size: 0.9rem;
+  }
+
+  .btn-primary,
+  .btn-secondary {
+    width: 100%;
+    margin: 8px 0;
+    padding: 12px;
+  }
+
+  .stats-container {
+    grid-template-columns: 1fr;
+  }
+
+  .stat-number {
+    font-size: 1.6rem;
   }
 }

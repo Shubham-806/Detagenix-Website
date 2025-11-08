@@ -59,16 +59,16 @@
   border-color: transparent;
 }
 
-/* Projects Grid */
+/* ✅ FIXED Responsive Grid */
 .projects-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 25px;
   margin-top: 30px;
-  display: flex;
-  justify-content: center;
-  
+  width: 100%;
 }
+
+/* Project Card */
 .project-card {
   background: white;
   border-radius: 12px;
@@ -76,7 +76,6 @@
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
   transition: all 0.3s ease;
   border: 1px solid #f1f5f9;
-  max-width: 400px;
 }
 
 .project-card:hover {
@@ -84,7 +83,7 @@
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
 }
 
-/* Project Image with Hover Zoom */
+/* Project Image */
 .project-image {
   position: relative;
   height: 250px;
@@ -163,7 +162,7 @@
   overflow: hidden;
 }
 
-/* Technologies Tags */
+/* Tech Tags */
 .technologies-tags {
   display: flex;
   flex-wrap: wrap;
@@ -172,7 +171,7 @@
 }
 
 .tech-tag {
-  background-color: #29b6f6;;
+  background-color: #29b6f6;
   color: white;
   padding: 0.3rem 0.8rem;
   border-radius: 15px;
@@ -180,7 +179,7 @@
   font-weight: 600;
 }
 
-/* View Project Button */
+/* Button */
 .view-project-btn {
   background: transparent;
   border: 2px solid #29b6f6;
@@ -196,10 +195,9 @@
 .view-project-btn:hover {
   background: #29b6f6;
   color: white !important;
-  transform: translateY(-2px);
 }
 
-/* CTA Section */
+/* CTA */
 .portfolio-cta {
   text-align: center;
 }
@@ -218,43 +216,33 @@
 .btn-secondary:hover {
   background: #667eea;
   color: white;
-  transform: translateY(-2px);
 }
 
-/* Mobile Responsive */
+/* ✅ Mobile Responsive */
 @media (max-width: 768px) {
   .portfolio-section {
     padding: 3rem 1rem;
   }
-  
+
   .section-header h2 {
     font-size: 2rem;
   }
-  
-  .portfolio-filters {
-    gap: 0.5rem;
-  }
-  
+
   .filter-btn {
     padding: 0.6rem 1rem;
-    font-size: 0.9rem;
+    font-size: 0.85rem;
   }
-  
-  .projects-grid {
-    grid-template-columns: 1fr;
-    gap: 1.5rem;
-  }
-  
-  .project-content {
-    padding: 1.2rem;
-  }
-  
+
   .project-image {
     height: 200px;
   }
+
+  .project-content {
+    padding: 1.2rem;
+  }
 }
 
-/* Loading Animation */
+/* Loading State */
 .project-card.loading {
   opacity: 0.7;
 }

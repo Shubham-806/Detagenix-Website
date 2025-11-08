@@ -3,12 +3,13 @@
   background-color: #0f172a;
 }
 
+/* ✅ Desktop: exactly 2 columns */
 .services-grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);   /* exactly 2 columns */
+  grid-template-columns: repeat(2, 1fr);
   gap: 1rem;
-  max-width: 800px;                        /* controls card width */
-  margin: auto;                            /* centers them */
+  max-width: 800px;
+  margin: auto;
 }
 
 .service-card {
@@ -22,7 +23,9 @@
   border-radius: 12px;
   box-shadow: 0 3px 10px rgba(0,0,0,0.1);
   text-align: center;
+  transition: all 0.3s ease;
 }
+
 .service-card:hover {
   transform: translateY(-8px);
   box-shadow: 0 10px 22px rgba(79,195,247,0.35);
@@ -41,8 +44,8 @@
   font-weight: 600;
   text-decoration: none;
   font-size: 16px;
-  transition: all 0.3s ease-in-out;
   position: relative;
+  transition: all 0.3s ease-in-out;
 }
 
 .learn-more::after {
@@ -65,9 +68,39 @@
   width: 100%;
 }
 
-/* RESPONSIVE FIX ✅ */
-@media(max-width: 768px) {
+/* ✅ RESPONSIVE */
+@media (max-width: 768px) {
+
+  /* Smaller padding for mobile */
   .services-section {
-    padding: 2rem;
+    padding: 2rem 1rem;
+  }
+
+  /* ✅ Switch to 1 column */
+  .services-grid {
+    grid-template-columns: 1fr;
+    max-width: 100%;
+    gap: 1.2rem;
+  }
+
+  /* ✅ Reduce card padding on mobile */
+  .service-card {
+    padding: 20px;
+  }
+
+  /* ✅ Image adjusts better on small screens */
+  .service-card img {
+    width: 85%;
+  }
+}
+
+/* Extra small screens ✅ */
+@media (max-width: 480px) {
+  .service-card {
+    padding: 18px;
+  }
+
+  .learn-more {
+    font-size: 14px;
   }
 }

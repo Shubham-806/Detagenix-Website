@@ -1,134 +1,90 @@
-/* TechSlider.css */
 .tech-slider-container {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   background: #0f172a;
   color: #e2e8f0;
-  padding: 50px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  min-height: 40vh;
-  width: 100%;
+  padding: 40px 20px;
+  text-align: center;
+  font-family: 'Segoe UI';
 }
 
 .tech-slider-container h1 {
+  font-size: 2.3rem;
+  color: #fff;
   margin-bottom: 30px;
-  text-align: center;
-  color: #ffffff;
-  
-  font-size: 3rem;
- 
 }
 
+/* ✅ Continuous scrolling wrapper */
 .slider-container {
-  width: 90%;
-  max-width: 1200px;
-  height: 40vh;
   overflow: hidden;
-  position: relative;
-  border-radius: 12px;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+  width: 100%;
+  max-width: 1300px;
+  margin: auto;
   background: #1e293b;
+  padding: 20px 0;
+  border-radius: 12px;
 }
 
-.slider-track {
+/* ✅ Scrolling track */
+.marquee-scroll {
   display: flex;
-  height: 100%;
-  animation: slide 20s linear infinite;
-  will-change: transform;
+  animation: marquee 22s linear infinite;
 }
 
-.slide {
-  min-width: 300px;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  padding: 20px;
-  background: #ffffff;
-  margin: 0 10px;
-  border-radius: 8px;
-  transition: all 0.3s ease;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  flex-shrink: 0;
-}
-
-.slide:hover {
-  transform: translateY(-5px);
-  background: #bac2ce;
-}
-
-.tech-icon {
-  font-size: 2.5rem;
-  margin-bottom: 15px;
-}
-
-.tech-name {
-  font-size: 1.2rem;
-  font-weight: 600;
-  margin-bottom: 10px;
-  color: #2c3133;
-  text-align: center;
-}
-
-.tech-desc {
-  font-size: 0.9rem;
-  text-align: center;
-  color: #000000;
-  line-height: 1.4;
-}
-
-@keyframes slide {
-  0% {
+/* ✅ Continuous scroll animation */
+@keyframes marquee {
+  from {
     transform: translateX(0);
   }
-  100% {
+  to {
     transform: translateX(-50%);
   }
 }
 
-.controls {
-  margin-top: 20px;
-  display: flex;
-  gap: 15px;
+/* ✅ Card style */
+.slide {
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 20px;
+  margin: 0 12px;
+  min-width: 260px;
+  box-shadow: 0 6px 16px rgba(0,0,0,0.15);
+  text-align: center;
+  flex-shrink: 0;
 }
 
-
-
-.paused .slider-track {
-  animation-play-state: paused;
-}
-
-/* Responsive Design */
+/* ✅ Mobile responsive card sizing */
 @media (max-width: 768px) {
   .slide {
-    min-width: 250px;
+    min-width: 220px;
+    padding: 16px;
   }
-  
-  .tech-slider-container h1 {
-    font-size: 1.5rem;
+
+  .tech-icon {
+    font-size: 2rem;
   }
-  
-  .slider-container {
-    width: 95%;
+
+  .tech-name {
+    font-size: 1rem;
+  }
+
+  .tech-desc {
+    font-size: 0.85rem;
   }
 }
 
 @media (max-width: 480px) {
   .slide {
     min-width: 200px;
-    padding: 15px;
+    padding: 14px;
   }
-  
+
   .tech-icon {
-    font-size: 2rem;
+    font-size: 1.8rem;
   }
-  
+
   .tech-name {
-    font-size: 1rem;
+    font-size: 0.95rem;
   }
-  
+
   .tech-desc {
     font-size: 0.8rem;
   }
