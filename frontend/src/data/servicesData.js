@@ -1,5 +1,6 @@
 import cyber from "../asset/services/cybersecurity.jpg";
 import ai from "../asset/services/ai.avif";
+import blockchain from "../asset/services/blockchain.jpg";
 const servicesData = [
   {
     title: "CyberSecurity",
@@ -13,6 +14,13 @@ const servicesData = [
     icon: ai,
     link: "/services#ai"
   },
+  {
+  title: "Blockchain Development",
+  desc: "Secure, decentralized, and trustless blockchain solutions for smart contracts, Web3 applications, and enterprise systems.",
+  icon: blockchain,   // make sure you import the icon
+  link: "/services#blockchain"
+}
+
 //   {
 //     title: "Mobile App Development",
 //     desc: "Beautiful mobile apps for Android & iOS.",

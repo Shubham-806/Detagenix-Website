@@ -1,19 +1,11 @@
 import React, { useEffect, useRef, useState } from "react";
 import "./Career.css";
 
-/*
-  Careers.jsx
-  - Application form posts FormData { name, email, role, resume(file), message } to /api/careers/apply
-  - Testimonials and openings are local arrays — replace with API calls if needed
-*/
-
-
-
-
 function Careers() {
-    useEffect(() => {
-        window.scrollTo({ top: 0, behavior: "smooth" });
-      }, []);
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }, []);
+
   const [form, setForm] = useState({
     name: "",
     email: "",
@@ -28,25 +20,25 @@ function Careers() {
 
   const ROLE_PLACEHOLDER_TEXT = "e.g. Frontend Intern";
   const MESSAGE_PLACEHOLDER_TEXT = "Write a short message...";
+  const [rolePlaceholder, setRolePlaceholder] = useState("");
+  const [messagePlaceholder, setMessagePlaceholder] = useState("");
 
-  const [rolePlaceholder, setRolePlaceholder] = React.useState("");
-  const [messagePlaceholder, setMessagePlaceholder] = React.useState("");
+  const BASE_URL = process.env.REACT_APP_BASE_URL; // Use .env for backend base URL
 
   function handleRoleFocus() {
-  if (!form.role) setRolePlaceholder(ROLE_PLACEHOLDER_TEXT);
-}
-function handleRoleBlur() {
-  if (!form.role) setRolePlaceholder("");
-}
-function handleMessageFocus() {
-  if (!form.message) setMessagePlaceholder(MESSAGE_PLACEHOLDER_TEXT);
-}
-function handleMessageBlur() {
-  if (!form.message) setMessagePlaceholder("");
-}
+    if (!form.role) setRolePlaceholder(ROLE_PLACEHOLDER_TEXT);
+  }
+  function handleRoleBlur() {
+    if (!form.role) setRolePlaceholder("");
+  }
+  function handleMessageFocus() {
+    if (!form.message) setMessagePlaceholder(MESSAGE_PLACEHOLDER_TEXT);
+  }
+  function handleMessageBlur() {
+    if (!form.message) setMessagePlaceholder("");
+  }
 
-
-  // Sample openings (replace with API data if you have backend)
+  // Sample openings
   const openings = [
     {
       id: "intern-frontend-001",
@@ -117,82 +109,72 @@ function handleMessageBlur() {
     return () => obs.disconnect();
   }, []);
 
+  // Testimonials carousel
   useEffect(() => {
-  let current = 0;
-  const slides = document.querySelectorAll(".testi-item");
-  const dots = document.querySelectorAll(".carousel-dot");
-  const carousel = document.querySelector(".testi-carousel");
+    let current = 0;
+    const slides = document.querySelectorAll(".testi-item");
+    const dots = document.querySelectorAll(".carousel-dot");
+    const carousel = document.querySelector(".testi-carousel");
 
-  if (!carousel || slides.length === 0) return;
+    if (!carousel || slides.length === 0) return;
 
-  function showSlide(i) {
-    slides.forEach((s, idx) => s.classList.toggle("active", idx === i));
-    dots.forEach((d, idx) => d.classList.toggle("active", idx === i));
-  }
+    function showSlide(i) {
+      slides.forEach((s, idx) => s.classList.toggle("active", idx === i));
+      dots.forEach((d, idx) => d.classList.toggle("active", idx === i));
+    }
 
-  function nextSlide() {
-    current = (current + 1) % slides.length;
-    showSlide(current);
-  }
-
-  let intervalId;
-
-  // Start auto-slide
-  const startCarousel = () => {
-    if (!intervalId) intervalId = setInterval(nextSlide, 4000);
-  };
-
-  // Stop auto-slide
-  const stopCarousel = () => {
-    clearInterval(intervalId);
-    intervalId = null;
-  };
-
-  // Start immediately
-  showSlide(current);
-  startCarousel();
-
-  // ✅ Pause on hover
-  carousel.addEventListener("mouseenter", stopCarousel);
-  carousel.addEventListener("mouseleave", startCarousel);
-
-  // ✅ Dot click navigation
-  dots.forEach((dot, index) => {
-    dot.addEventListener("click", () => {
-      stopCarousel();
-      current = index;
+    function nextSlide() {
+      current = (current + 1) % slides.length;
       showSlide(current);
-      startCarousel();
+    }
+
+    let intervalId;
+    const startCarousel = () => {
+      if (!intervalId) intervalId = setInterval(nextSlide, 4000);
+    };
+    const stopCarousel = () => {
+      clearInterval(intervalId);
+      intervalId = null;
+    };
+
+    showSlide(current);
+    startCarousel();
+
+    carousel.addEventListener("mouseenter", stopCarousel);
+    carousel.addEventListener("mouseleave", startCarousel);
+
+    dots.forEach((dot, index) => {
+      dot.addEventListener("click", () => {
+        stopCarousel();
+        current = index;
+        showSlide(current);
+        startCarousel();
+      });
     });
-  });
 
-  // ✅ Cleanup
-  return () => {
-    stopCarousel();
-    carousel.removeEventListener("mouseenter", stopCarousel);
-    carousel.removeEventListener("mouseleave", startCarousel);
-    dots.forEach((dot, index) =>
-      dot.removeEventListener("click", () => showSlide(index))
-    );
-  };
-}, []);
-
+    return () => {
+      stopCarousel();
+      carousel.removeEventListener("mouseenter", stopCarousel);
+      carousel.removeEventListener("mouseleave", startCarousel);
+      dots.forEach((dot, index) =>
+        dot.removeEventListener("click", () => showSlide(index))
+      );
+    };
+  }, []);
 
   function handleChange(e) {
-  const { name, value } = e.target;
-  setForm((s) => ({ ...s, [name]: value }));
+    const { name, value } = e.target;
+    setForm((s) => ({ ...s, [name]: value }));
 
-  // if user types into role/message, hide placeholder
-  if (name === "role") {
-    if (value) setRolePlaceholder("");
-    else if (document.activeElement.id === "role") setRolePlaceholder(ROLE_PLACEHOLDER_TEXT);
+    if (name === "role") {
+      if (value) setRolePlaceholder("");
+      else if (document.activeElement.id === "role") setRolePlaceholder(ROLE_PLACEHOLDER_TEXT);
+    }
+    if (name === "message") {
+      if (value) setMessagePlaceholder("");
+      else if (document.activeElement.id === "message") setMessagePlaceholder(MESSAGE_PLACEHOLDER_TEXT);
+    }
   }
-  if (name === "message") {
-    if (value) setMessagePlaceholder("");
-    else if (document.activeElement.id === "message") setMessagePlaceholder(MESSAGE_PLACEHOLDER_TEXT);
-  }
-}
-
 
   function handleFile(e) {
     setResumeFile(e.target.files[0] ? e.target.files[0] : null);
@@ -212,7 +194,6 @@ function handleMessageBlur() {
 
     setUploading(true);
 
-    // Build FormData for backend
     const fd = new FormData();
     fd.append("name", form.name);
     fd.append("email", form.email);
@@ -221,8 +202,8 @@ function handleMessageBlur() {
     fd.append("resume", resumeFile);
 
     try {
-      // Example POST — replace URL with your backend endpoint
-      const res = await fetch("/api/careers/apply", {
+      // ✅ Use BASE_URL from .env
+      const res = await fetch(`${BASE_URL}/applications/apply`, {
         method: "POST",
         body: fd,
       });
@@ -240,7 +221,6 @@ function handleMessageBlur() {
       setError(err.message || "Submission failed. Try again later.");
     } finally {
       setUploading(false);
-      // auto-hide success after 4s
       setTimeout(() => setSubmitted(false), 4000);
     }
   }
@@ -265,9 +245,9 @@ function handleMessageBlur() {
         </div>
       </header>
 
+      {/* Openings Section */}
       <section id="openings" className="openings container care-fade">
         <h2 className="section-subtitle">Current Openings</h2>
-
         <div className="row g-4">
           {openings.map((job) => (
             <div className="col-md-6" key={job.id}>
@@ -303,6 +283,7 @@ function handleMessageBlur() {
         </div>
       </section>
 
+      {/* Apply Section */}
       <section id="apply" className="apply-section container care-fade">
         <h2 className="section-subtitle">Apply / Submit Resume</h2>
 
@@ -335,35 +316,34 @@ function handleMessageBlur() {
               </div>
 
               <div className="form-group">
-  <input
-    id="role"
-    name="role"
-    value={form.role}
-    onChange={handleChange}
-    onFocus={handleRoleFocus}
-    onBlur={handleRoleBlur}
-    className="form-control"
-    placeholder={rolePlaceholder}
-    required
-  />
-  <label htmlFor="role">Role Applying For</label>
-</div>
+                <input
+                  id="role"
+                  name="role"
+                  value={form.role}
+                  onChange={handleChange}
+                  onFocus={handleRoleFocus}
+                  onBlur={handleRoleBlur}
+                  className="form-control"
+                  placeholder={rolePlaceholder}
+                  required
+                />
+                <label htmlFor="role">Role Applying For</label>
+              </div>
 
-<div className="form-group">
-  <textarea
-    id="message"
-    name="message"
-    rows="4"
-    value={form.message}
-    onChange={handleChange}
-    onFocus={handleMessageFocus}
-    onBlur={handleMessageBlur}
-    className="form-control"
-    placeholder={messagePlaceholder}
-  />
-  <label htmlFor="message">A short message (optional)</label>
-</div>
-
+              <div className="form-group">
+                <textarea
+                  id="message"
+                  name="message"
+                  rows="4"
+                  value={form.message}
+                  onChange={handleChange}
+                  onFocus={handleMessageFocus}
+                  onBlur={handleMessageBlur}
+                  className="form-control"
+                  placeholder={messagePlaceholder}
+                />
+                <label htmlFor="message">A short message (optional)</label>
+              </div>
 
               <div className="form-group file-group">
                 <input
@@ -378,17 +358,20 @@ function handleMessageBlur() {
                 <label htmlFor="resume" className="file-label">
                   {resumeFile ? resumeFile.name : "Upload Resume (PDF / DOC)"}
                 </label>
-                {/* <small className="form-text">
-                  Max size 5MB. We accept PDF, DOC, DOCX.
-                </small> */}
               </div>
 
               {error && <div className="alert alert-danger mt-2">{error}</div>}
               {submitted && (
-                <div className="alert alert-success mt-2">Application sent — thank you!</div>
+                <div className="alert alert-success mt-2">
+                  Application sent — thank you!
+                </div>
               )}
 
-              <button className="btn btn-primary w-100" type="submit" disabled={uploading}>
+              <button
+                className="btn btn-primary w-100"
+                type="submit"
+                disabled={uploading}
+              >
                 {uploading ? "Submitting..." : "Submit Application"}
               </button>
             </form>
@@ -408,29 +391,27 @@ function handleMessageBlur() {
               </p>
             </div>
 
+            {/* Testimonials */}
             <div className="testimonials mt-4">
-  <h4>What Our Interns Say</h4>
-
-  <div className="testi-carousel">
-    {testimonials.map((t, i) => (
-      <div className="testi-item" key={i}>
-        <blockquote className="testi-card">
-          <p>“{t.quote}”</p>
-          <footer>
-            — <strong>{t.name}</strong>, <span>{t.role}</span>
-          </footer>
-        </blockquote>
-      </div>
-    ))}
-  </div>
-</div>
-<div className="carousel-dots">
-  {testimonials.map((_, i) => (
-    <span key={i} className="carousel-dot"></span>
-  ))}
-</div>
-
-
+              <h4>What Our Interns Say</h4>
+              <div className="testi-carousel">
+                {testimonials.map((t, i) => (
+                  <div className="testi-item" key={i}>
+                    <blockquote className="testi-card">
+                      <p>“{t.quote}”</p>
+                      <footer>
+                        — <strong>{t.name}</strong>, <span>{t.role}</span>
+                      </footer>
+                    </blockquote>
+                  </div>
+                ))}
+              </div>
+              <div className="carousel-dots">
+                {testimonials.map((_, i) => (
+                  <span key={i} className="carousel-dot"></span>
+                ))}
+              </div>
+            </div>
           </div>
         </div>
       </section>

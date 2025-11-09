@@ -1,97 +1,106 @@
-import cloudimage from "../asset/services/cloud.png";
-import softwareimage from "../asset/services/software.jpeg";
-import resourceimage from "../asset/services/resource.png";
-import businessimage from "../asset/services/businesssolution.png";
-export const servicespageData = [
+const servicespageData = [
   {
     id: 1,
-    title: "Cloud Implementation & Digital Transformation",
-    subtitle: "Scalable cloud, DevOps automation & modernization",
+    title: "MERN Stack Development",
+    desc: "High-speed modern apps using MongoDB, Express, React, Node.",
     description:
-      "We help organizations migrate to the cloud, modernize legacy systems, streamline operations, and adopt digital-first solutions. Our cloud engineers specialize in AWS, Azure, and GCP to build secure, scalable, and high-performance infrastructures.",
-    icon: cloudimage,
-    techStack: [
-      "AWS",
-      "Azure",
-      "Google Cloud",
-      "Docker",
-      "Kubernetes",
-      "Terraform",
-      "CI/CD"
-    ],
-    useCases: [
-      "Cloud migration and optimization",
-      "DevOps workflows & CI/CD automation",
-      "Scalable backend infrastructure",
-      "Modernization of legacy systems"
-    ]
+      "We build high-speed, modern web applications using the MERN stack. Our solutions ensure a seamless user experience, rapid development cycles, and superior performance, perfect for dynamic digital products requiring real-time updates and robust data handling",
+    techStack: ["MongoDB", "Express", "React", "Node.js"],
   },
 
   {
     id: 2,
-    title: "Custom Software Development",
-    subtitle: "Tailor-made web, mobile, and enterprise applications",
+    title: "Java Full Stack Development",
+    desc: "Enterprise-grade backend & frontend solutions.",
     description:
-      "We build secure, scalable, and lightning-fast custom applications—from enterprise dashboards to multi-platform mobile apps. Our team delivers software engineered for performance, automation, and long-term growth.",
-    icon: softwareimage,
-    techStack: [
-      "MERN Stack",
-      "Next.js",
-      "React Native",
-      "Java",
-      "Spring Boot",
-      "Python",
-      ".NET"
-    ],
-    useCases: [
-      "Custom CRM/ERP solutions",
-      "Mobile apps for Android/iOS",
-      "Enterprise workflow automation",
-      "Multi-tenant SaaS platforms"
-    ]
+      "Leverage the enterprise-grade reliability and scalability of Java Full Stack. We deliver secure, high-transaction web applications and backend systems, ideal for complex business logic, financial platforms, and applications requiring proven, durable performance.",
+    techStack: ["Java", "Spring Boot", "Hibernate", "MySQL"],
   },
 
   {
     id: 3,
-    title: "Resource Deployment",
-    subtitle: "Dedicated developers, engineers & IT staffing",
+    title: "Python Full Stack Development",
+    desc: "Fast prototyping with Python + modern frameworks.",
     description:
-      "We provide skilled and certified IT professionals for on-site or remote deployment. Whether you need developers, cloud engineers, QA testers, or DevOps teams, we supply reliable talent to meet your operational goals.",
-    icon: resourceimage,
-    techStack: [
-      "Full Stack Developers",
-      "Cloud Engineers",
-      "QA Testers",
-      "DevOps Engineers",
-      "AI/ML Engineers"
-    ],
-    useCases: [
-      "Dedicated remote developers",
-      "Team extension for ongoing projects",
-      "Tech-specific contract staffing",
-      "Long-term resource outsourcing"
-    ]
+      "Combine the simplicity of Python for rapid prototyping with powerful backend frameworks. We create efficient, secure, and data-friendly full-stack solutions, integrating machine learning components directly into your web applications for smarter functionality.",
+    techStack: ["Python", "Django", "Flask", "PostgreSQL"],
   },
 
   {
     id: 4,
-    title: "Business Solutions",
-    subtitle: "Enterprise solutions to drive growth & efficiency",
+    title: "AI/ML Solutions",
+    desc: "Custom AI systems to automate and optimize workflows.",
     description:
-      "We empower businesses with data-driven solutions, automation systems, workflow optimization, and enterprise-grade digital products tailored to their unique needs.",
-    icon: businessimage,
-    techStack: [
-      "Power BI",
-      "Tableau",
-      "AI Automation",
-      "RPA Tools",
-      "Cloud-native APIs"
-    ],
-    useCases: [
-      "Business intelligence dashboards",
-      "Process automation & optimization",
-      "Data analytics & reporting",
-      "Enterprise integrations"
-    ]
-  }
+      "Python for AI/ML Applications - We design and deploy custom Artificial Intelligence and Machine Learning solutions using Python. Our applications are built to automate complex decisions, optimize operational efficiencies, and provide your business with a competitive edge through intelligent prediction models.Data Analysis & Predictive Modeling- Transform your raw data into strategic, actionable intelligence. Our data analysis and predictive modeling services uncover hidden trends, forecast future outcomes, and guide decision-making, ensuring every choice you make is backed by deep statistical insight..",
+    techStack: ["Python", "TensorFlow", "Scikit-Learn", "Pandas"],
+  },
+
+  {
+    id: 5,
+    title: "Cloud Implementation",
+    desc: "Migrate & optimize on AWS, Azure, or Google Cloud.",
+    description:
+      "Seamlessly migrate and optimize your infrastructure with our Cloud Implementation expertise. We help you leverage platforms like AWS, Azure, or Google Cloud for cost efficiency, flexible scaling, and enhanced disaster recovery, ensuring business continuity.",
+    techStack: ["AWS", "Azure", "GCP", "Docker"],
+  },
+
+{
+  id: 6,
+  title: "Blockchain Development & Consulting",
+  desc: "Secure decentralized solutions with full transparency and traceability.",
+  description:
+    "Build trust, transparency, and immutability into your business processes. We specialize in developing secure, decentralized applications (dApps) and implementing private or public blockchain solutions for supply chain, finance, and secure data management. Our blockchain expertise enables automated, fraud-resistant transactions and complete data traceability.",
+  techStack: ["Blockchain", "Smart Contracts", "Solidity", "Ethereum", "Hyperledger"],
+},
+{
+  id: 7,
+  title: "Digital Transformation",
+  desc: "Modernize systems and automate processes for a future-ready business.",
+  description:
+    "We create a holistic Digital Transformation roadmap tailored to your goals. Our team integrates modern technologies, automates critical processes, and upgrades legacy systems to ensure your business is agile, efficient, and fully prepared for the future.",
+  techStack: ["Automation", "Cloud Migration", "Process Optimization", "AI Integration"],
+}
+,{
+  id: 8,
+  title: "Custom Software Development",
+  desc: "Bespoke software crafted to solve your unique business challenges.",
+  description:
+    "Need a specialized tool? We deliver bespoke Custom Software Development tailored to your unique business problems. Our team converts your operational requirements into powerful proprietary applications that improve efficiency, boost productivity, and provide a lasting competitive advantage.",
+  techStack: ["Custom Architecture", "API Development", "Full-Stack Engineering", "Cloud Deployment"],
+}
+,{
+  id: 9,
+  title: "Resource Deployment & Business Solutions",
+  desc: "On-demand skilled talent and strategic consulting for business growth.",
+  description:
+    "Secure the right talent, right when you need it. We offer strategic resource deployment for project augmentation and specialized expertise. Combined with our business solutions consulting, we help you fill critical skill gaps, accelerate project timelines, and scale your operations efficiently.",
+  techStack: ["Project Augmentation", "Consulting", "Talent Deployment", "Business Optimization"],
+}
+,{
+  id: 10,
+  title: "Relational & NoSQL Databases",
+  desc: "High-performance, reliable database architectures for all data types.",
+  description:
+    "We architect and manage highly available databases, supporting both traditional Relational and modern NoSQL environments. Our solutions ensure strong data integrity, excellent performance under heavy load, and the flexibility required to manage structured and unstructured data at scale.",
+  techStack: ["MySQL", "PostgreSQL", "MongoDB", "Redis", "Cassandra"],
+}
+,{
+  id: 11,
+  title: "Scalable Backend Solutions",
+  desc: "Backend systems engineered for growth, security, and high uptime.",
+  description:
+    "Build your future on a rock-solid foundation. Our scalable backend solutions are engineered for massive growth and resilience, ensuring high uptime, rapid response times, and strong security protocols to support even your most demanding applications.",
+  techStack: ["Node.js", "Java", "Microservices", "Docker", "Kubernetes"],
+}
+,{
+  id: 12,
+  title: "Data Analysis & Predictive Modeling",
+  desc: "Turn raw data into insights and accurate future predictions.",
+  description:
+    "Transform your raw data into strategic, actionable intelligence. Our data analysis and predictive modeling services uncover hidden trends, forecast future outcomes, and enhance decision-making with deep statistical insights.",
+  techStack: ["Python", "NumPy", "Pandas", "Power BI", "Machine Learning"],
+}
+
 ];
+
+export default servicespageData;

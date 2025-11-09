@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useEffect } from "react";
-import Services from "../../components/Servicessection/Services";
-import { servicespageData } from "../../data/servicespageData";
+import Servicecard from "../../components/ServicePage/ServiceCard/Servicecard";
+import  servicespageData  from "../../data/servicespageData";
 import ServiceModal from "../../components/ServicePage/ServiceModal";
 import BookServiceForm from "../../components/ServicePage/BookServiceForm";
 import "./Service.css";
@@ -41,7 +41,7 @@ const Service = () => {
 
       <div className="services-grid">
         {servicespageData.map((service) => (
-          <Services
+          <Servicecard
             key={service.id}
             service={service}
             onLearnMore={() => openModal(service)}

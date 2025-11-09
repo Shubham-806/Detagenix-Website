@@ -35,3 +35,11 @@
   cursor: pointer;
   border-radius: 6px;
 }
+@media (max-width: 480px) {
+  .blog-list-title {
+    font-size: 2rem; /* ✅ smaller for mobile */
+  }
+  .blog-grid{
+    place-content: center;
+  }
+}

@@ -50,80 +50,6 @@
   font-weight: 600;
 }
 
-.vision-mission {
-  margin-top: 40px;
-  margin-bottom: 80px;
-}
-
-.vision-mission .glass-card {
-  padding: 50px 30px;          
-  min-height: 280px;            
-  font-size: 1.4rem;
-  box-shadow: 0 8px 30px rgba(0, 191, 255, 0.2);
-  background: #ffffff;
-  color: #0c1b3d;
-  transition: all 0.4s ease;
-  border-radius: 22px;
-}
-
-.vision-mission .glass-card h3 {
-  font-weight: 800;
-  color: #0c1b3d;
-  margin-bottom: 30px;
-  font-size: 2rem;
-}
-
-.vision-mission .glass-card p {
-  color: #333;
-  line-height: 1.6;
-}
-
-.vision-mission .glass-card:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 0 25px rgba(0, 191, 255, 0.35);
-}
-
-@media (max-width: 768px) {
-  .vision-mission .glass-card {
-    min-height: auto;
-    padding: 35px 20px;
-    font-size: 0.95rem;
-  }
-}
-
-
-.team-photo {
-  width: 100%;
-  border-radius: 50%;
-  height: 250px;
-  object-fit: cover;
-  border: 2px solid #00bfff;
-  margin-bottom: 15px;
-  transition: transform 0.3s ease;
-}
-
-.team-card {
-  background: #ffffff;
-  border-radius: 12px;
-  padding: 18px;
-  transition: all 0.3s ease;
-}
-
-.team-card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 0 18px rgba(0,191,255,0.18);
-}
-
-.team-card h4 {
-  color: #0c1b3d;
-  font-weight: 600;
-  margin-top: 10px;
-}
-
-.team-card p {
-  color: #444;
-  font-size: 1.1rem;
-}
 
 .fade-up {
   opacity: 0;
@@ -246,6 +172,35 @@
 .why-card:hover {
   transform: translateY(-6px);
   box-shadow: 0 0 18px rgba(0, 191, 255, 0.25);
+}
+
+
+.core-values {
+  margin-top: 60px;
+  margin-bottom: 80px;
+}
+
+.core-values .glass-card h4{
+  font-weight: 600;
+}
+
+.core-values .glass-card {
+  font-size: 1.02rem;
+  background: rgba(255, 255, 255, 0.95);
+  color: #0c1b3d;
+  border-radius: 14px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.core-values .glass-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 8px 25px rgba(0, 191, 255, 0.25);
+}
+
+.highlight {
+  color: #00bfff;
+  font-weight: 600;
 }
 
 

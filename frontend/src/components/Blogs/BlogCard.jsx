@@ -4,6 +4,7 @@ import "./BlogCard.css";
 
 const BlogCard = ({ blog }) => {
   return (
+    <div class="blog-card-container">
     <div className="blog-card">
       <img src={blog.bannerImage} alt={blog.title} className="blog-card-img" />
 
@@ -18,9 +19,10 @@ const BlogCard = ({ blog }) => {
         </div>
 
         <Link to={`/blog/${blog.slug}`} className="read-more-btn">
-          Read More →
+          Read  →
         </Link>
       </div>
+    </div>
     </div>
   );
 };

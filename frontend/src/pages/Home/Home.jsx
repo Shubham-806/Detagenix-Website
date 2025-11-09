@@ -9,6 +9,9 @@ import Services from "../../components/Servicessection/Services.jsx";
 import  servicesData  from "../../data/servicesData.js";
 
 const Home = () => {
+  useEffect(() => {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }, []);
   // Stats data for the highlights section
   const navigate = useNavigate();
   const stats = [

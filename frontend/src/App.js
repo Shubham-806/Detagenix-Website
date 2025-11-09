@@ -10,8 +10,10 @@ import Projectpage from "./pages/Project/Projectpage.jsx";
 import Contactus from "./pages/Contact/Contactus.jsx"; 
 import Aboutus from "./pages/About/Aboutus.jsx"; 
 import Careers from "./pages/career/Career.jsx";
+import PrivacyPolicy from "./components/PrivacyPolicy/PrivacyPolicy.jsx";
 
 function App() {
+  
   return (
     <>
       <Navbar />
@@ -24,6 +26,7 @@ function App() {
         <Route path="/blog" element={<BlogPage />} />
         <Route path="/blog/:slug" element={<BlogDetailPage />} />
         <Route path="/careers" element={<Careers />} />
+        <Route path="/policy" element={<PrivacyPolicy />} />
       </Routes>
       <Footer />
     </>

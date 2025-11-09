@@ -33,9 +33,9 @@ const Testimonial = () => {
                 <p className="feedback-text">{client.feedback}</p>
                 
                 <div className="client-info">
-                  <div className="client-image">
+                  {/* <div className="client-image">
                     <img src={client.image} alt={client.name} />
-                  </div>
+                  </div> */}
                   <div className="client-details">
                     <h3 className="client-name">{client.name}</h3>
                     <p className="client-role">{client.role}</p>

@@ -1,11 +1,8 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import axios from "axios";
 import "./Contactus.css";
-import { useEffect } from "react";  
 
 function Contactus() {
-     useEffect(() => {
-    window.scrollTo({ top: 0, behavior: "smooth" });
-  }, []);
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -13,16 +10,31 @@ function Contactus() {
   });
 
   const [submitted, setSubmitted] = useState(false);
+  const [loading, setLoading] = useState(false);
+
+  const BASE_URL = process.env.REACT_APP_BASE_URL; // backend URL from .env
+
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }, []);
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    setSubmitted(true);
-    setTimeout(() => setSubmitted(false), 4000);
-    setFormData({ name: "", email: "", message: "" });
+    setLoading(true);
+    try {
+      await axios.post(`${BASE_URL}/contact`, formData);
+      setSubmitted(true);
+      setTimeout(() => setSubmitted(false), 4000);
+      setFormData({ name: "", email: "", message: "" });
+    } catch (error) {
+      console.error("Error sending message:", error);
+      alert("Failed to send message. Please try again.");
+    }
+    setLoading(false);
   };
 
   return (
@@ -33,58 +45,11 @@ function Contactus() {
           <div className="col-lg-5 contact-info-dark">
             <h2>Let’s Connect</h2>
             <p className="text-light-muted">
-              Have a project in mind or a question?  
-              Reach out to our team — we’ll get back to you soon.
+              Have a project in mind or a question? Reach out to our team — we’ll get back to you soon.
             </p>
-
-            <ul className="list-unstyled mt-4">
-              <li>
-                <i className="bi bi-geo-alt-fill"></i> Indore, Madhya Pradesh, India
-              </li>
-              <li>
-                <i className="bi bi-envelope-fill"></i>
-                <span> hr@detagenix.com</span>
-              </li>
-
-              
-              <li className="social-links">
-                <a
-                  href="https://www.linkedin.com/company/detagenix/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="d-flex align-items-center"
-                >
-                  <i className="bi bi-linkedin"></i>
-                  <span> Detagenix</span>
-                </a>
-              </li>
-              <li className="social-links">
-                <a
-                  href="https://www.instagram.com/detagenix?igsh=ajdmNGVvbG15YWE4"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="d-flex align-items-center"
-                >
-                  <i className="bi bi-instagram"></i>
-                  <span> Detagenix</span>
-                </a>
-              </li>
-
-              <li>
-                <i className="bi bi-telephone-fill"></i> +91 8607997261 || +91 7489834717
-              </li>
-            </ul>
-
-            <div className="map-container mt-4">
-              <iframe
-                title="Detagenix Location"
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3680.185020692897!2d75.90306007349591!3d22.72136342750494!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3962e2cc1c37e2c1%3A0x88be41cfe5eb3331!2sRupal%20Regency!5e0!3m2!1sen!2sin!4v1762178512148!5m2!1sen!2sin"
-                allowFullScreen=""
-                loading="lazy"
-              ></iframe>
-            </div>
-          </div>
-
+            {/* Contact info & map here */}
+          
+<ul className="list-unstyled mt-4"> <li> <i className="bi bi-geo-alt-fill"></i> Indore, Madhya Pradesh, India </li> <li> <i className="bi bi-envelope-fill"></i> <span> hr@detagenix.com</span> </li> <li className="social-links"> <a href="https://www.linkedin.com/company/detagenix/" target="_blank" rel="noopener noreferrer" className="d-flex align-items-center" > <i className="bi bi-linkedin"></i> <span> Detagenix</span> </a> </li> <li className="social-links"> <a href="https://www.instagram.com/detagenix?igsh=ajdmNGVvbG15YWE4" target="_blank" rel="noopener noreferrer" className="d-flex align-items-center" > <i className="bi bi-instagram"></i> <span> Detagenix</span> </a> </li> <li> <i className="bi bi-telephone-fill"></i> +91 8607997261 || +91 7489834717 </li> </ul> <div className="map-container mt-4"> <iframe title="Detagenix Location" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3680.185020692897!2d75.90306007349591!3d22.72136342750494!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3962e2cc1c37e2c1%3A0x88be41cfe5eb3331!2sRupal%20Regency!5e0!3m2!1sen!2sin!4v1762178512148!5m2!1sen!2sin" allowFullScreen="" loading="lazy" ></iframe> </div> </div>
           {/* Right Section - Form */}
           <div className="col-lg-7">
             <div className="contact-form-dark p-4 p-md-5">
@@ -125,20 +90,16 @@ function Contactus() {
                         required
                       ></textarea>
                     </div>
-                    <button type="submit" className="btn btn-primary w-100">
-                      Send Message
+                    <button type="submit" className="btn btn-primary w-100" disabled={loading}>
+                      {loading ? "Sending..." : "Send Message"}
                     </button>
                   </form>
                 </>
               ) : (
                 <div className="text-center success-message">
                   <i className="bi bi-check-circle-fill text-success fs-1 mb-3"></i>
-                  <h5 className="text-success fw-semibold">
-                    Message Sent Successfully!
-                  </h5>
-                  <p className="text-light">
-                    Our team will reach out to you shortly.
-                  </p>
+                  <h5 className="text-success fw-semibold">Message Sent Successfully!</h5>
+                  <p className="text-light">Our team will reach out to you shortly.</p>
                 </div>
               )}
             </div>

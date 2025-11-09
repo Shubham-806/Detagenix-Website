@@ -9,7 +9,7 @@ const ServiceModal = ({ service, onClose, openForm }) => {
 
         <button className="close-btn" onClick={onClose}>×</button>
 
-        <img src={service.icon} className="modal-icon" />
+        {/* <img src={service.icon} className="modal-icon" /> */}
 
         <h2>{service.title}</h2>
         <p>{service.description}</p>
@@ -21,11 +21,8 @@ const ServiceModal = ({ service, onClose, openForm }) => {
           ))}
         </div>
 
-<button
-  className="book-btn"
-  onClick={() => window.open("https://www.linkedin.com/company/detagenix/", "_blank")}
->
-          Contact Us
+        <button className="book-btn" onClick={openForm}>
+          Book Service
         </button>
       </div>
     </div>

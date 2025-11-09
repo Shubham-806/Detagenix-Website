@@ -28,7 +28,16 @@
   transition: all 0.3s ease;
   height: 100%; /* ✅ make all cards same height in grid */
 }
-
+.service-card-content h3{
+    font-size: 2.2rem;
+    font-weight:500;
+    padding-bottom: 2rem;
+}
+.service-card-content p{
+    
+    font-weight:500;
+   
+}
 .service-card img {
   width: 100%;
   height: 20rem;
@@ -101,9 +110,9 @@
   }
 
   /* ✅ Image adjusts better on small screens */
-  .service-card img {
+  /* .service-card img {
     width: 85%;
-  }
+  } */
 }
 
 /* Extra small screens ✅ */
