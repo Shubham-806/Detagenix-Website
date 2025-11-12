@@ -125,6 +125,7 @@ const Footer = () => {
               <ul>
                 <li><FaEnvelope className="footer-icon" /> contact@detagenix.com</li>
                 <li><FaPhoneAlt className="footer-icon" /> +91 8607997261</li>
+                 <li><i class="bi bi-whatsapp footer-icon"></i> +91 8607997261</li> 
                 <li><FaMapMarkerAlt className="footer-icon" /> Indore, India</li>
               </ul>
 

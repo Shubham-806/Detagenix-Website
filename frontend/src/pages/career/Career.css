@@ -64,7 +64,9 @@
   border-radius:20px;
   font-size:0.82rem;
 }
-
+.btn:hover{
+  text-decoration: none;
+}
 
 .job-meta {
   list-style:none;
