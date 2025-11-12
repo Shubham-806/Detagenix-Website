@@ -31,7 +31,7 @@ export const feedbackData = [
       //  role: "CEO",
       //  company: "ennobridge",
       feedback: "Their strategic insights helped us pivot at a critical time. The results have been transformative for our business growth.",
-      //  image: " "
+        image: " https://images.unsplash.com/photo-1611451444023-7fe9d86fe1d0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8cG9ydHJhaXQlMjB3b21hbnxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=200&q=80",
       rating: 5,
       companyImage:ennobridge
     },

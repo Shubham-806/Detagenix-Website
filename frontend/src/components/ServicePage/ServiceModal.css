@@ -34,7 +34,7 @@
   border: none;
   font-size: 22px;
   cursor: pointer;
-  color: #444;
+  color: #444!important;
   font-weight: bold;
 }
 

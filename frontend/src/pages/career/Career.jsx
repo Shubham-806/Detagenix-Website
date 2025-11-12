@@ -237,7 +237,7 @@ function Careers() {
             openings below or apply directly with your resume.
           </p>
           <p style={{ marginTop: 16 }}>
-            <a href="#openings" className="btn btn-light btn-lg text-primary">
+            <a href="#openings" className="btn btn-outline-light btn-lg ">
               View Openings
             </a>{" "}
             <a href="#apply" className="btn btn-outline-light btn-lg">
