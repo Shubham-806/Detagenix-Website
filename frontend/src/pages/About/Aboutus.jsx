@@ -87,7 +87,7 @@ function About() {
       <section className="about-intro container text-center fade-up">
         <h1 className="section-title">Detagenix: Driving Innovation and Digital Excellence</h1>
         <p className="lead">
-          {/* <span className="highlight">Detagenix</span>*/} Organization is a dynamic IT consulting and digital transformation company 
+          {/* <span className="highlight">Detagenix</span> Organization is a dynamic IT consulting and digital transformation company 
           dedicated to empowering businesses with cutting-edge, scalable technology solutions. We go beyond basic
           software development to craft tailored, enterprise-grade applications, specializing in robust technologies
           like the <strong>MERN Stack</strong> and advanced services such as <strong>AI/ML, Data Modeling & Resource Development</strong>.
@@ -95,7 +95,12 @@ function About() {
           <br />
           Our philosophy is centered on understanding your unique needs to deliver reliable excellence, build lasting
           partnerships, and ensure your business becomes smarter, faster, and future-ready in the connected digital
-          world.
+          world. */}
+          Detagenix is a dynamic IT consulting and digital transformation organization dedicated to empowering businesses with cutting-edge, scalable technology solutions.
+
+We go beyond basic software development to craft tailored, enterprise-grade applications  specializing in robust technologies like the MERN Stack, and advanced services such as AI/ML solutions, Blockchain and Cybersecurity.
+<br />
+Our Resource Deployment model enables organizations to scale efficiently by providing skilled professionals across major technologies on hourly, pro-rata, or project-based engagements, ensuring flexibility and continuity in every development cycle.
         </p>
       </section>
 
