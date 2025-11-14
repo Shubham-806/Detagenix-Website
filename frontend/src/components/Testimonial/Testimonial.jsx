@@ -33,12 +33,20 @@ const Testimonial = () => {
               {/* Footer row: user (left) + company (right) */}
               <div className="testimonial-footer">
                 <div className="testimonial-user">
+                                    {item.image && (
                   <img src={item.image} alt={item.name} className="testimonial-avatar" />
+                                    )}
                   <p className="testimonial-name">{item.name}</p>
                 </div>
 
                 <div className="testimonial-company">
-                  <img src={item.companyImage} alt={item.company} className="company-logo" />
+                  {item.companyImage && (
+    <img 
+      src={item.companyImage} 
+      alt={item.company} 
+      className="company-logo" 
+    />
+  )}
                   
                 </div>
               </div>

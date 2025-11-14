@@ -2,7 +2,7 @@ import surya from "../asset/feedback/surya prakash vaishnav.jpg";
 import fastcad from "../asset/feedback/Fastcad.png";
 import mahohar from "../asset/feedback/manohar.jpg";
 import devkripa from "../asset/feedback/dev.jpg";
-// import punam from "../asset/feedback/punam.jpg";
+ import oswal from "../asset/feedback/oswal.jpg";
 import ennobridge from "../asset/feedback/enno.jpg";
 export const feedbackData = [ 
     {
@@ -37,6 +37,14 @@ export const feedbackData = [
     },
     {
       id: 4,
+       name: "Hitesh Jain",
+       feedback:"The team is professional, fast, and truly understands how SEO works. Our business visibility improved drastically, and we finally started getting quality inquiries. Great experience working with them.",
+ image:"",
+ rating: 5,
+ companyImage:oswal   
+    },
+    {
+      id: 5,
        name: "Brian B",
       //  role: "CEO",
       //  company: "ennobridge",

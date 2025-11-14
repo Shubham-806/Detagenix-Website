@@ -51,7 +51,7 @@ const BookServiceForm = ({ serviceName, onClose }) => {
 
   return ReactDOM.createPortal(
     <div className="modal-overlay" onClick={onClose}>
-      <div className="modal-content" onClick={(e) => e.stopPropagation()}>
+      <div className="modal-content book-form" onClick={(e) => e.stopPropagation()}>
         <button className="close-btn" onClick={onClose}>×</button>
 
         <h2>Book {serviceName}</h2>
@@ -82,12 +82,29 @@ const BookServiceForm = ({ serviceName, onClose }) => {
             onChange={handleChange}
           >
             <option value="">Select Technology</option>
-            <option value="ReactJS">ReactJS</option>
-            <option value="NodeJS">NodeJS</option>
-            <option value="MERN Stack">MERN Stack</option>
-            <option value="Python/Django">Python/Django</option>
-            <option value="Java Spring Boot">Java Spring Boot</option>
-            <option value="AWS Cloud">AWS Cloud</option>
+            <option value="UI/UX">UI/UX</option>
+<option value="HADOOP & DATA SCIENCE">HADOOP & DATA SCIENCE</option>
+<option value="BACKEND DEVELOPMENT">BACKEND DEVELOPMENT</option>
+<option value="IOT (INTERNET OF THINGS)">IOT (INTERNET OF THINGS)</option>
+<option value="DEDICATED FULL-STACK">DEDICATED FULL-STACK</option>
+<option value="CYBER SECURITY">CYBER SECURITY</option>
+<option value="WEB DEVELOPMENT">WEB DEVELOPMENT</option>
+<option value="QUALITY ENGINEERING">QUALITY ENGINEERING</option>
+<option value="MOBILE APPLICATION">MOBILE APPLICATION</option>
+<option value="SAP">SAP</option>
+<option value="METAVERSE">METAVERSE</option>
+<option value="DEVOPS / CLOUD DEVOPS">DEVOPS / CLOUD DEVOPS</option>
+<option value="PYTHON AND JAVA">PYTHON AND JAVA</option>
+<option value="CLOUD DEVELOPMENT">CLOUD DEVELOPMENT</option>
+<option value="MICROSOFT DYNAMICS 365">MICROSOFT DYNAMICS 365</option>
+<option value="MAINTENANCE & SUPPORT">MAINTENANCE & SUPPORT</option>
+<option value="BLOCKCHAIN TECHNOLOGY">BLOCKCHAIN TECHNOLOGY</option>
+<option value="REACT & ANGULAR">REACT & ANGULAR</option>
+<option value="MACHINE LEARNING">MACHINE LEARNING</option>
+<option value="APPLICATION DEVELOPMENT">APPLICATION DEVELOPMENT</option>
+<option value="NETWORK OPERATION">NETWORK OPERATION</option>
+<option value="SITECORE ORDERCLOUD">SITECORE ORDERCLOUD</option>
+
             <option value="Other">Other</option>
           </select>
 

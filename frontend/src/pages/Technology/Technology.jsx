@@ -125,6 +125,12 @@ useEffect(() => {
       desc: "Build robust and fast APIs using frameworks like Django and Flask for data-intensive applications.",
       icon: <FaPython className="tech-icon" />,
     },
+    {
+  category: "fullstack",
+  title: "UI/UX Design",
+  desc: "Design visually appealing, user-centered interfaces with modern design tools focusing on accessibility, responsiveness, and seamless user experience.",
+  icon: <FaRobot className="tech-icon" />, // You can change icon to FaPencilAlt or FaPalette
+},
 
     // AI
     {

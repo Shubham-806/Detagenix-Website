@@ -46,7 +46,7 @@
 /* ✅ BOOK SERVICE BUTTON */
 .book-btn {
   display: block;
-  margin: 30px auto 0;
+  margin: 30px auto ;
   width: 10%;
   padding: 15px 5px;
   background: #00bfff;

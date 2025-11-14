@@ -10,17 +10,17 @@
   width: 350px;
   display: flex;
   flex-direction: column;
-  justify-content: space-between; /* ✅ pushes button to bottom */
+ /* justify-content: space-between; ✅ pushes button to bottom */
   align-items: center;
-  gap: 0.5rem;
-  padding: 30px;
-  background: #fff;
-  color: #000;
+  gap: 20px;
+  padding: 15px;
+  background: #122D41;
+  color: white;
   border-radius: 12px;
   box-shadow: 0 3px 10px rgba(0,0,0,0.1);
   text-align: center;
   transition: all 0.3s ease;
-  height: 550px; /* ✅ make all cards same height in grid */
+  height: 510px; /* ✅ make all cards same height in grid */
 }
 
 .service-cards img {
@@ -28,7 +28,7 @@
   height: 13rem;
   object-fit: cover;         
   border-radius: 12px;
-  margin-bottom: 15px;
+  margin-bottom: 10px;
 }
 
 .service-card-content {
@@ -89,6 +89,7 @@
   .service-cards{
     padding: 20px;
     height: auto;
+    gap: 0;
   }
 
   /* ✅ Image adjusts better on small screens */
@@ -101,16 +102,16 @@
   }
   .service-cards img {
   width: 50%;
-  height: 7rem;
+  height: 8rem;
   object-fit: cover;         
   border-radius: 12px;
   margin-bottom: 15px;
 }
 .service-card-content h3{
-    font-size: 1rem;
+    font-size: 15px;
     padding-bottom: 1rem;
 }.service-card-content p{
-    font-size: 0.8rem;
+    font-size: 12px;
 }
 }
 
