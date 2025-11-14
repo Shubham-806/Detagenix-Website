@@ -86,6 +86,7 @@
 }
 
 .testimonial-name {
+  margin: auto;
   font-size: 0.9rem;
   font-weight: 600;
   color: #3f3e3e;
@@ -101,6 +102,7 @@
   width: 100px;
   height: 40px;
   object-fit: contain;
+  border-color: #ffffff;
   border-radius: 6px;
   margin-bottom: 0.2rem;
 }
@@ -129,7 +131,7 @@
   }
   .company-logo {
   
-  width: 50;
+  width: 50px;
   height: 40px;
   object-fit: contain;
   border-radius: 6px;

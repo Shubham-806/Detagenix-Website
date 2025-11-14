@@ -90,7 +90,7 @@ function About() {
           {/* <span className="highlight">Detagenix</span>*/} Organization is a dynamic IT consulting and digital transformation company 
           dedicated to empowering businesses with cutting-edge, scalable technology solutions. We go beyond basic
           software development to craft tailored, enterprise-grade applications, specializing in robust technologies
-          like the <strong>MERN Stack</strong> and advanced services such as <strong>AI/ML & Data Modeling</strong>.
+          like the <strong>MERN Stack</strong> and advanced services such as <strong>AI/ML, Data Modeling & Resource Development</strong>.
           <br />
           <br />
           Our philosophy is centered on understanding your unique needs to deliver reliable excellence, build lasting

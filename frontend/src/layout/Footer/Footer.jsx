@@ -133,7 +133,7 @@ const Footer = () => {
                 <a href="https://www.linkedin.com/company/detagenix/" target="_blank">
                   <FaLinkedin />
                 </a>
-                <a href="https://www.instagram.com/detagenix/" target="_blank">
+                <a href="https://www.instagram.com/detagenix_/?igsh=djVpcjZheDV4MXU2&utm_source=qr#" target="_blank">
                   <FaInstagram />
                 </a>
               </div>
