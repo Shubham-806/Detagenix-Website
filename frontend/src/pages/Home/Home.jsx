@@ -75,15 +75,14 @@ const Home = () => {
         <div className="about-content">
           <h2>About Us</h2>
           <p className="lead">
-          <span className="highlight">Detagenix</span> is a dynamic IT consulting and digital transformation company
+          <span className="highlight">Detagenix</span> is a dynamic IT consulting and digital transformation organization
           dedicated to empowering businesses with cutting-edge, scalable technology solutions. We go beyond basic
           software development to craft tailored, enterprise-grade applications, specializing in robust technologies
-          like the <strong>MERN Stack</strong> and advanced services such as <strong>AI/ML & Data Modeling</strong>.
+          like the <strong>MERN Stack</strong> and advanced services such as <strong>AI/ML solutions, Blockchain and Cybersecurity.
+</strong>.
           <br />
           <br />
-          Our philosophy is centered on understanding your unique needs to deliver reliable excellence, build lasting
-          partnerships, and ensure your business becomes smarter, faster, and future-ready in the connected digital
-          world.
+          Our Resource Deployment model enables organizations to scale efficiently by providing skilled professionals across major technologies on hourly, pro-rata, or project-based engagements, ensuring flexibility and continuity in every development cycle.
         </p>
 
           <button onClick={goToAbout}className="about-btn">Learn More</button>
